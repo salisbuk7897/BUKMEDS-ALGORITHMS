@@ -32,7 +32,7 @@ The above file contains a solution to the second puzzle. it returns the distance
   - ```py 06_05_2023.py race 1234``` : This takes the filename, 'race' argument and a racetime in seconds. It returns the distance of all the runners.
   - ```py 06_05_2023.py raceLeader 1234``` : This takes the filename, 'raceLeader' argument and a racetime in seconds. It returns the distance of winning runner.
 
-Puzzle 1 floor instruction in the document
+Puzzle 2 distance of winning runner instruction in the document
 ```
 1) John can run 10 m/s for 6 seconds, but then must rest for 20 seconds
 2) James can run 8 m/s for 8 seconds, but then must rest for 25 seconds
@@ -44,7 +44,26 @@ Puzzle 1 floor instruction in the document
 After 1234 seconds, what is the distance of the winning runner?
 ```
 
-Answer to Puzzle 1
+Answer to Puzzle 2
 ```
 Jenna 3540m
+```
+
+## Puzzle 3: Average of Permutation numbers divisible by 7
+```File Name: 06_05_2023.py```  
+The above file contains a solution to the third puzzle. it returns the Average of max and min permutation numbers of 1867 divisible by 7.  it can be run in 4 ways in the terminal/command prompt:
+  - ```py 08_05_2023.py``` : in this case, there is only one argument which is the file name. It returns the answer to the puzzle instruction specified in the challenge document. Average of max and min permutation numbers of 1867 divisible by 7.
+  - ```py 08_05_2023.py sampleTest``` : This takes the filename and another argument 'sampleTest'. This runs some sample tests specified in the challenge document as well as some edge cases. You can edit the test cases in the file to add more test cases.
+  - ```py 06_08_2023.py findAverage 1234``` : This takes the filename, 'findAverage' argument and a number. It returns the Average of max and min permutation numbers of the given number which are divisible by 7.
+
+Puzzle 3 instruction in the document
+```
+What you’ll need to do is determine if any of the permutations of 1867 are divisible by 7, and
+if so, what is the average between the smallest and largest permutation? Decimals are
+allowed.
+```
+
+Answer to Puzzle 3
+```
+5152.0
 ```
