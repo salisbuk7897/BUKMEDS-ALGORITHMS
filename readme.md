@@ -50,7 +50,7 @@ Jenna 3540m
 ```
 
 ## Puzzle 3: Average of Permutation numbers divisible by 7
-```File Name: 06_05_2023.py```  
+```File Name: 08_05_2023.py```  
 The above file contains a solution to the third puzzle. it returns the Average of max and min permutation numbers of 1867 divisible by 7.  it can be run in 4 ways in the terminal/command prompt:
   - ```py 08_05_2023.py``` : in this case, there is only one argument which is the file name. It returns the answer to the puzzle instruction specified in the challenge document. Average of max and min permutation numbers of 1867 divisible by 7.
   - ```py 08_05_2023.py sampleTest``` : This takes the filename and another argument 'sampleTest'. This runs some sample tests specified in the challenge document as well as some edge cases. You can edit the test cases in the file to add more test cases.
@@ -66,4 +66,22 @@ allowed.
 Answer to Puzzle 3
 ```
 5152.0
+```
+
+## Puzzle 4: Minimum Cost of Paired Workers
+```File Name: 10_05_2023.py```  
+The above file contains a solution to the fourth puzzle. it returns the Minimum cost of paired workers based on the efficiencies given in the instruction document.  it can be run in 2 ways in the terminal/command prompt:
+  - ```py 10_05_2023.py``` : in this case, there is only one argument which is the file name. Minimum cost of paired workers based on the efficiencies given in the instruction document.
+  - ```py 10_05_2023.py sampleTest``` : This takes the filename and another argument 'sampleTest'. This runs some sample tests specified in the challenge document as well as some edge cases. You can edit the test cases in the file to add more test cases.
+
+Puzzle 4 instruction in the document
+```
+What is the minimum cost of this array of efficiencies:
+[1, 3, 54, 712, 52, 904, 113, 12, 135, 32, 31, 56, 23, 79, 611, 123, 677, 232, 997, 101, 111,
+123, 2, 7, 24, 57, 99, 45, 666, 42, 104, 129, 554, 335, 876, 35, 15, 93, 13]
+```
+
+Answer to Puzzle 4
+```
+Minimum Cost = 37
 ```
