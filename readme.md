@@ -71,7 +71,7 @@ Answer to Puzzle 3
 ## Puzzle 4: Minimum Cost of Paired Workers
 ```File Name: 10_05_2023.py```  
 The above file contains a solution to the fourth puzzle. it returns the Minimum cost of paired workers based on the efficiencies given in the instruction document.  it can be run in 2 ways in the terminal/command prompt:
-  - ```py 10_05_2023.py``` : in this case, there is only one argument which is the file name. Minimum cost of paired workers based on the efficiencies given in the instruction document.
+  - ```py 10_05_2023.py``` : in this case, there is only one argument which is the file name. Returns minimum cost of paired workers based on the efficiencies given in the instruction document.
   - ```py 10_05_2023.py sampleTest``` : This takes the filename and another argument 'sampleTest'. This runs some sample tests specified in the challenge document as well as some edge cases. You can edit the test cases in the file to add more test cases.
 
 Puzzle 4 instruction in the document
@@ -83,5 +83,5 @@ What is the minimum cost of this array of efficiencies:
 
 Answer to Puzzle 4
 ```
-Minimum Cost = 37
+Minimum Cost = 539
 ```
