@@ -54,7 +54,7 @@ Jenna 3540m
 The above file contains a solution to the third puzzle. it returns the Average of max and min permutation numbers of 1867 divisible by 7.  it can be run in 4 ways in the terminal/command prompt:
   - ```py 08_05_2023.py``` : in this case, there is only one argument which is the file name. It returns the answer to the puzzle instruction specified in the challenge document. Average of max and min permutation numbers of 1867 divisible by 7.
   - ```py 08_05_2023.py sampleTest``` : This takes the filename and another argument 'sampleTest'. This runs some sample tests specified in the challenge document as well as some edge cases. You can edit the test cases in the file to add more test cases.
-  - ```py 06_08_2023.py findAverage 1234``` : This takes the filename, 'findAverage' argument and a number. It returns the Average of max and min permutation numbers of the given number which are divisible by 7.
+  - ```py 06_05_2023.py findAverage 1234``` : This takes the filename, 'findAverage' argument and a number. It returns the Average of max and min permutation numbers of the given number which are divisible by 7.
 
 Puzzle 3 instruction in the document
 ```
@@ -84,4 +84,23 @@ What is the minimum cost of this array of efficiencies:
 Answer to Puzzle 4
 ```
 Minimum Cost = 539
+```
+
+## Puzzle 6: Minimum Number of Steps
+```File Name: 14_05_2023.py```  
+The above file contains a solution to the sixth puzzle. it returns the minimum number of steps needed to disconect a series of nodes under threat in a network based on the instruction given in the instruction document.  it can be run in 3 ways in the terminal/command prompt:
+  - ```py 14_05_2023.py``` : in this case, there is only one argument which is the file name. Returns minimum number of steps needed to disconect a series of nodes under threat in a network based on the instruction given in the instruction document.
+  - ```py 14_05_2023.py sampleTest``` : This takes the filename and another argument 'sampleTest'. This runs some sample tests specified in the challenge document as well as some edge cases. You can edit the test cases in the file to add more test cases.
+  - ```py 14_05_2023.py minSteps aabbbccaabbbddd``` : This takes the filename, 'minSteps' argument and a number. It returns minimum number of steps needed to disconect a series of nodes under threat in a network based on the series given in the terminal.
+
+Puzzle 6 instruction in the document
+```
+What is the minimum number of steps required to delete this series:
+“kjslaqpwoereeeeewwwefifjdksjdfhjdksdjfkdfdlddkjdjfjfjfjjjjfjffnefhkjgefkgjefkjgkefjekihutrieruhi
+gtefhgbjkkkknbmssdsdsfdvneurghiueor”
+```
+
+Answer to Puzzle 6
+```
+Minimum Number of Steps: 82
 ```
