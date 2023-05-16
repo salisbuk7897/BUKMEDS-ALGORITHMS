@@ -134,3 +134,43 @@ Answer to Puzzle 6
 ```
 Minimum Number of Steps: 82
 ```
+
+## Puzzle 7: Lifeform Score
+```File Name: 16_05_2023.py```  
+The above file contains a solution to the seventh puzzle. it returns the lifeform score as requested in the instruction document.  it can be run in 2 ways in the terminal/command prompt:
+  - ```py 16_05_2023.py``` : in this case, there is only one argument which is the file name. Returns lifeform score.
+  - ```py 16_05_2023.py sampleTest``` : This takes the filename and another argument 'sampleTest'. This runs some sample tests specified in the challenge document as well as some edge cases. You can edit the test cases in the file to add more test cases.
+
+Puzzle 7 instruction in the document
+```
+Consider the following start state:
+
+XXXX.
+X....
+X..X.
+.X.X.
+XX.XX
+
+What is the lifeform score for the first layout that appears twice?
+```
+
+Answer to Puzzle 7
+```
+31 Minute(S)
+X X X X X
+. . . . .
+. . X . .
+. . . . .
+Score = 2**0 = 1
+Score = 2**1 = 2
+Score = 2**2 = 4
+Score = 2**3 = 8
+Score = 2**4 = 16
+Score = 2**12 = 4096
+Score = 2**20 = 1048576
+Score = 2**21 = 2097152
+Score = 2**22 = 4194304
+Score = 2**23 = 8388608
+Score = 2**24 = 16777216
+LifeForm Total Score: 32509983
+```
