@@ -161,6 +161,7 @@ X X X X X
 . . . . .
 . . X . .
 . . . . .
+X X X X X
 Score = 2**0 = 1
 Score = 2**1 = 2
 Score = 2**2 = 4
