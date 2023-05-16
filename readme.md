@@ -86,12 +86,42 @@ Answer to Puzzle 4
 Minimum Cost = 539
 ```
 
+## Puzzle 5: Decode an Encoded Message
+```File Name: 12_05_2023.py```  
+The above file contains a solution to the fifth puzzle. it returns the decoded message based on instructions given in the instruction document.  it can be run in 3 ways in the terminal/command prompt:
+  - ```py 12_05_2023.py``` : in this case, there is only one argument which is the file name. Returns decoded message based on instructions given in the instruction document.
+  - ```py 12_05_2023.py sampleTest``` : This takes the filename and another argument 'sampleTest'. This runs some sample tests specified in the challenge document as well as some edge cases. You can edit the test cases in the file to add more test cases.
+  - ```py 12_05_2023.py decodeSample 0100``` : This takes the filename, 'decodeSample' argument and an encoded string. It returns decoded message based on string given in the terminal.
+
+Puzzle 5 instruction in the document
+```
+What is the decoded phrase for this string?
+
+“1111101111111111000111111100101111110101111111110011011111111111000100111111010
+0111100110111111100101111010010111111000111111111110001101111110101110011011111
+1111110001101111010011111100101111110010110111111101001111001101111111111100010
+11101100011111110111111111001110111111111110001111110111111101011111111110001111
+11011111110011111111111000111101111111011111111010011111111110001001111110100110
+01111111111000111011111111110101111101111111010111110111111010011110011111111110
+00100111111010011001111111111000111111011111111110001110011111011111110011111110
+01011111011111100011101111111111100011111111010111101110111111111110001111111110
+11111110101111111100011001111111111000111111111110001111111111100011111111010111
+1010011111110101111111111000100111111011011111101101101001111111000111111100111
+11111111000111111011111101001111111111000111111110101111011101111111111100011111
+11011011110111111110000011111110011101”
+```
+
+Answer to Puzzle 5
+```
+i love angelhack code challenge because it is fun and exciting and i dislike the word yab that appears in the phrase
+```
+
 ## Puzzle 6: Minimum Number of Steps
 ```File Name: 14_05_2023.py```  
 The above file contains a solution to the sixth puzzle. it returns the minimum number of steps needed to disconect a series of nodes under threat in a network based on the instruction given in the instruction document.  it can be run in 3 ways in the terminal/command prompt:
   - ```py 14_05_2023.py``` : in this case, there is only one argument which is the file name. Returns minimum number of steps needed to disconect a series of nodes under threat in a network based on the instruction given in the instruction document.
   - ```py 14_05_2023.py sampleTest``` : This takes the filename and another argument 'sampleTest'. This runs some sample tests specified in the challenge document as well as some edge cases. You can edit the test cases in the file to add more test cases.
-  - ```py 14_05_2023.py minSteps aabbbccaabbbddd``` : This takes the filename, 'minSteps' argument and a number. It returns minimum number of steps needed to disconect a series of nodes under threat in a network based on the series given in the terminal.
+  - ```py 14_05_2023.py minSteps aabbbccaabbbddd``` : This takes the filename, 'minSteps' argument and a network series. It returns minimum number of steps needed to disconect a series of nodes under threat in a network based on the series given in the terminal.
 
 Puzzle 6 instruction in the document
 ```

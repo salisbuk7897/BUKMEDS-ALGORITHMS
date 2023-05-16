@@ -1,5 +1,11 @@
-import re
-
+import sys
+#define Test Cases
+Tests = [
+    {
+        "input": "11111110010011111100101111101111111001111111101111111111110001001111110010111110",
+        "outcome": "salisu ali"
+    }
+]
 #define the dictionary
 code = {'a': '00', 
 'b': '01',
@@ -12,7 +18,7 @@ code = {'a': '00',
 'i': '111110',
 'j': '1111110000',
 'k': '1111110001',
-'l': '1111110010',
+'l': '1111110010', 
 'm': '1111110011',
 'n': '1111110100',
 'o': '1111110101',
@@ -41,146 +47,6 @@ encoded_instruction = """1111101111111111000111111100101111110101111111110011011
 1010011111110101111111111000100111111011011111101101101001111111000111111100111
 11111111000111111011111101001111111111000111111110101111011101111111111100011111
 11011011110111111110000011111110011101"""
-
-#define find and replace
-def fnr(encd, cd):
-    twos = []
-    fours = []
-    six = []
-    tens = []
-    fteens = []
-    sp = cd[" "]
-    nencd = encd.replace(sp," ")
-    chunks = nencd.split(" ")
-    #chunks = encd.split(" ")
-    for i in cd:
-        if len(cd[i]) == 2:
-            twos.append(cd[i])
-        elif len(cd[i]) == 4:
-            fours.append(cd[i])
-        elif len(cd[i]) == 6:
-            six.append(cd[i])
-        elif len(cd[i]) == 10:
-            tens.append(cd[i])
-        elif len(cd[i]) == 14:
-            fteens.append(cd[i])
-    chk = []
-    chk.append(chunks[0])
-    chk.append(chunks[1])
-    chk.append(chunks[2])
-    #print("{} chunck".format(chunks[2]))
-    for j in chunks:
-        word = ""
-        todecode = j
-        while len(todecode)>0:
-            #print("todecode: {}".format(todecode))
-            if len(todecode) >= 14:
-                letter = todecode[0:14]
-                e_letter = find14(letter, cd, fteens)
-                if e_letter == "not":
-                    letter1 = todecode[0:10]
-                    e_letter1 = find10(letter1, cd, tens)
-                    if e_letter1 == "not":
-                        letter2 = todecode[0:6]
-                        e_letter2 = find6(letter2, cd, six)
-                        if e_letter2 == "not":
-                            letter3 = todecode[0:4]
-                            e_letter3 = find4(letter3, cd, fours)
-                            if e_letter3 == "not":
-                                letter4 = todecode[0:2]
-                                e_letter4 = find2(letter4, cd, twos)
-                                if e_letter4 == "not":
-                                    print("{} not found". format(letter4))
-                                    break
-                                else:
-                                    word += e_letter4
-                                    todecode = todecode[2:]
-                            else:
-                                word += e_letter3
-                                todecode = todecode[4:]
-                        else:
-                            word += e_letter2
-                            todecode = todecode[6:]
-                    else:
-                        word += e_letter1
-                        todecode = todecode[10:]
-                else:
-                    word += e_letter
-                    todecode = todecode[14:]
-            elif len(todecode) >= 10:
-                letter1 = todecode[0:10]
-                e_letter1 = find10(letter1, cd, tens)
-                if e_letter1 == "not":
-                    letter2 = todecode[0:6]
-                    e_letter2 = find6(letter2, cd, six)
-                    if e_letter2 == "not":
-                        letter3 = todecode[0:4]
-                        e_letter3 = find4(letter3, cd, fours)
-                        if e_letter3 == "not":
-                            letter4 = todecode[0:2]
-                            e_letter4 = find2(letter4, cd, twos)
-                            if e_letter4 == "not":
-                                print("{} not found". format(letter4))
-                                break
-                            else:
-                                word += e_letter4
-                                todecode = todecode[2:]
-                        else:
-                            word += e_letter3
-                            todecode = todecode[4:]
-                    else:
-                        word += e_letter2
-                        todecode = todecode[6:]
-                else:
-                    word += e_letter1
-                    todecode = todecode[10:]
-            elif len(todecode) >= 6:
-                letter2 = todecode[0:6]
-                e_letter2 = find6(letter2, cd, six)
-                if e_letter2 == "not":
-                    letter3 = todecode[0:4]
-                    e_letter3 = find4(letter3, cd, fours)
-                    if e_letter3 == "not":
-                        letter4 = todecode[0:2]
-                        e_letter4 = find2(letter4, cd, twos)
-                        if e_letter4 == "not":
-                            print("{} not found". format(letter4))
-                            break
-                        else:
-                            word += e_letter4
-                            todecode = todecode[2:]
-                    else:
-                        word += e_letter3
-                        todecode = todecode[4:]
-                else:
-                    word += e_letter2
-                    todecode = todecode[6:]
-            elif len(todecode) >= 4:
-                letter3 = todecode[0:4]
-                e_letter3 = find4(letter3, cd, fours)
-                if e_letter3 == "not":
-                    letter4 = todecode[0:2]
-                    e_letter4 = find2(letter4, cd, twos)
-                    if e_letter4 == "not":
-                        print("{} not found". format(letter4))
-                        break
-                    else:
-                        word += e_letter4
-                        todecode = todecode[2:]
-                else:
-                    word += e_letter3
-                    todecode = todecode[4:]
-            elif len(todecode) >= 2:
-                letter4 = todecode[0:2]
-                e_letter4 = find2(letter4, cd, twos)
-                if e_letter4 == "not":
-                    print("{} not found". format(letter4))
-                    break
-                else:
-                    word += e_letter4
-                    todecode = todecode[2:]
-
-        print(word)
 
 def find14(letter, cd, fteens):
     e_letter = "not"
@@ -251,6 +117,159 @@ def find2(letter, cd, twos):
         return "not"
     else:
         return e_letter
+    
+#Define function to decode the string
+def decodeseries(series, cd):
+    twos = []
+    fours = []
+    six = []
+    tens = []
+    fteens = []
+    for i in cd:
+        if len(cd[i]) == 2:
+            twos.append(cd[i])
+        elif len(cd[i]) == 4:
+            fours.append(cd[i])
+        elif len(cd[i]) == 6:
+            six.append(cd[i])
+        elif len(cd[i]) == 10:
+            tens.append(cd[i])
+        elif len(cd[i]) == 14:
+            fteens.append(cd[i])
+    word = ""
+    todecode = series.replace("\n", "")
+    while len(todecode)>0:
+        #print("todecode: {}".format(todecode))
+        if len(todecode) >= 14:
+            letter = todecode[0:14]
+            e_letter = find14(letter, cd, fteens)
+            if e_letter == "not":
+                letter1 = todecode[0:10]
+                e_letter1 = find10(letter1, cd, tens)
+                if e_letter1 == "not":
+                    letter2 = todecode[0:6]
+                    e_letter2 = find6(letter2, cd, six)
+                    if e_letter2 == "not":
+                        letter3 = todecode[0:4]
+                        e_letter3 = find4(letter3, cd, fours)
+                        if e_letter3 == "not":
+                            letter4 = todecode[0:2]
+                            e_letter4 = find2(letter4, cd, twos)
+                            if e_letter4 == "not":
+                                print("{} not found". format(letter4))
+                                break
+                            else:
+                                word += e_letter4
+                                todecode = todecode[2:]
+                        else:
+                            word += e_letter3
+                            todecode = todecode[4:]
+                    else:
+                        word += e_letter2
+                        todecode = todecode[6:]
+                else:
+                    word += e_letter1
+                    todecode = todecode[10:]
+            else:
+                word += e_letter
+                todecode = todecode[14:]
+        elif len(todecode) >= 10:
+            letter1 = todecode[0:10]
+            e_letter1 = find10(letter1, cd, tens)
+            if e_letter1 == "not":
+                letter2 = todecode[0:6]
+                e_letter2 = find6(letter2, cd, six)
+                if e_letter2 == "not":
+                    letter3 = todecode[0:4]
+                    e_letter3 = find4(letter3, cd, fours)
+                    if e_letter3 == "not":
+                        letter4 = todecode[0:2]
+                        e_letter4 = find2(letter4, cd, twos)
+                        if e_letter4 == "not":
+                            print("{} not found". format(letter4))
+                            break
+                        else:
+                            word += e_letter4
+                            todecode = todecode[2:]
+                    else:
+                        word += e_letter3
+                        todecode = todecode[4:]
+                else:
+                    word += e_letter2
+                    todecode = todecode[6:]
+            else:
+                word += e_letter1
+                todecode = todecode[10:]
+        elif len(todecode) >= 6:
+            letter2 = todecode[0:6]
+            e_letter2 = find6(letter2, cd, six)
+            if e_letter2 == "not":
+                letter3 = todecode[0:4]
+                e_letter3 = find4(letter3, cd, fours)
+                if e_letter3 == "not":
+                    letter4 = todecode[0:2]
+                    e_letter4 = find2(letter4, cd, twos)
+                    if e_letter4 == "not":
+                        print("{} not found". format(letter4))
+                        break
+                    else:
+                        word += e_letter4
+                        todecode = todecode[2:]
+                else:
+                    word += e_letter3
+                    todecode = todecode[4:]
+            else:
+                word += e_letter2
+                todecode = todecode[6:]
+        elif len(todecode) >= 4:
+            letter3 = todecode[0:4]
+            e_letter3 = find4(letter3, cd, fours)
+            if e_letter3 == "not":
+                letter4 = todecode[0:2]
+                e_letter4 = find2(letter4, cd, twos)
+                if e_letter4 == "not":
+                    print("{} not found". format(letter4))
+                    break
+                else:
+                    word += e_letter4
+                    todecode = todecode[2:]
+            else:
+                word += e_letter3
+                todecode = todecode[4:]
+        elif len(todecode) >= 2:
+            letter4 = todecode[0:2]
+            e_letter4 = find2(letter4, cd, twos)
+            if e_letter4 == "not":
+                print("{} not found". format(letter4))
+                break
+            else:
+                word += e_letter4
+                todecode = todecode[2:]
+    word = word.replace("   ", " yab ")
+    return word
 
+def testCases(tests):
+    num = 0
+    for i in tests:
+        num += 1
+        print("Test Case {}".format(num))
+        word = decodeseries(i["input"], code)
+        passed = (word == i["outcome"])
+        print("Input: {}\nExpected Outcome: {}\nReturned Outcome: {}".format(i["input"], i["outcome"], word))
+        if passed:
+            print("Test Case PASSED\n")
+        else:
+            print("Test Case FAILED\n")
 
-fnr(encoded_instruction, code)
+def Main():
+    word = decodeseries(encoded_instruction, code)
+    print(word)
+
+if __name__ == "__main__":
+    if(len(sys.argv) <= 1):
+        Main()
+    elif(sys.argv[1] == 'sampleTest'):
+        testCases(Tests)
+    elif(sys.argv[1] == 'decodeSample'):
+        word = decodeseries(sys.argv[2], code)
+        print(word)
